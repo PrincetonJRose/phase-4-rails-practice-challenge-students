@@ -36,7 +36,7 @@ class StudentsController < ApplicationController
     end
 
     def render_not_found_response
-        render json: { errors: ['Record not found.'] }, status: :not_found
+        render json: { errors: ['Student was not found.'] }, status: :not_found
     end
 
     def render_unprocessable_entity_response invalid
