@@ -19,13 +19,9 @@ class StudentsController < ApplicationController
     end
 
     def destroy
-        student = Student.find_by( id: params[:id] )
-        if student
-            student.destroy
-            render json: student, status: :ok
-        else
-            render json: { errors: ["Student not found."] }, status: 404
-        end
+        student = Student.find( params[:id] )
+        student.destroy
+        render json: student, status: :ok
     end
 
 
